@@ -1,0 +1,17 @@
+{
+  "name": "Conditional Access Exclusions",
+  "style": "Table",
+  "Fields": [
+    {
+      "name": "UserPrincipalName",
+      "UseExistingInfo": true,
+      "FrontendFields": [
+        {
+          "name": "UserPrincipalName",
+          "value": "userPrincipalName"
+        }
+      ],
+      "desc": ""
+    }
+  ]
+}
