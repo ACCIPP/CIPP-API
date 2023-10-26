@@ -1,0 +1,129 @@
+{
+  "name": "All User MFA Status - Tenant view - Updated",
+  "style": "Tenant",
+  "Fields": [
+    {
+      "name": "PasswordNeverExpires",
+      "UseExistingInfo": true,
+      "FrontendFields": [
+        {
+          "name": "Password Never Expires",
+          "value": "PasswordNeverExpires",
+          "formatter": "bool"
+        }
+      ]
+    },
+    {
+      "name": "OAuthAppConsent",
+      "UseExistingInfo": true,
+      "FrontendFields": [
+        {
+          "name": "OAuth App Consent",
+          "value": "OAuthAppConsent",
+          "formatter": "bool"
+        }
+      ]
+    },
+    {
+      "name": "UnifiedAuditLog",
+      "UseExistingInfo": true,
+      "FrontendFields": [
+        {
+          "name": "Unified Audit Log",
+          "value": "UnifiedAuditLog",
+          "formatter": "bool"
+        }
+      ]
+    },
+    {
+      "name": "MFANudgeState",
+      "UseExistingInfo": true,
+      "FrontendFields": [
+        {
+          "name": "MFA Registration Campaign Enabled",
+          "value": "MFANudgeState",
+          "formatter": "bool"
+        }
+      ]
+    },
+    {
+      "name": "TAPEnabled",
+      "UseExistingInfo": true,
+      "FrontendFields": [
+        {
+          "name": "Temporary Access Pass Enabled",
+          "value": "TAPEnabled",
+          "formatter": "bool"
+        }
+      ]
+    },
+    {
+      "name": "SecureDefaultState",
+      "UseExistingInfo": true,
+      "FrontendFields": [
+        {
+          "name": "Secure Defaults State Enabled",
+          "value": "SecureDefaultState",
+          "formatter": "warnBool"
+        }
+      ]
+    },
+    {
+      "name": "MessageCopyforSentAsDisabled",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "userDisplayName",
+          "value": "userDisplayName",
+          "formatter": "table"
+        },
+        {
+          "name": "userPrincipalName",
+          "value": "userPrincipalName",
+          "formatter": "table"
+        },
+        {
+          "name": "userType",
+          "value": "userType",
+          "formatter": "table"
+        },
+        {
+          "name": "isAdmin",
+          "value": "isAdmin",
+          "formatter": "table"
+        },
+        {
+          "name": "isMfaCapable",
+          "value": "isMfaCapable",
+          "formatter": "table"
+        }
+      ],
+      "StoreAs": "JSON",
+      "API": "Graph",
+      "ExtractFields": [
+        "userDisplayName",
+        "userPrincipalName",
+        "userType",
+        "isAdmin",
+        "isMfaCapable"
+      ],
+      "URL": "https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails"
+    },
+    {
+      "name": "CurrentSecureScore",
+      "UseExistingInfo": true,
+      "FrontendFields": [
+        {
+          "name": "Current Secure Score",
+          "value": "CurrentSecureScore.currentScore",
+          "formatter": "number"
+        },
+        {
+          "name": "Max Secure Score",
+          "value": "CurrentSecureScore.maxScore",
+          "formatter": "number"
+        }
+      ]
+    }
+  ]
+}
