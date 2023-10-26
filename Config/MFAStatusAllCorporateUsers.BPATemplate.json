@@ -1,6 +1,6 @@
 {
   "name": "MFA Status All Corporate Users",
-  "style": "Tenant",
+  "style": "Table",
   "Fields": [
     {
       "name": "UserDisplayName",
@@ -23,9 +23,9 @@
         "userPrincipalName"
       ],
       "parameters": {
-        "asApp": false
+        "asApp": true
       },
-      "URL": "https://graph.microsoft.com/v1.0/reports/authenticationMethods/userRegistrationDetails?select=userDisplayName,userPrincipalName,userType,isAdmin,isMfaCapable,isMfaRegistered,isSsprCapable,isSsprEnabled,isSsprRegistered,defaultMfaMethod,methodsRegistered"
+      "URL": "https://graph.microsoft.com/v1.0/reports/authenticationMethods/userRegistrationDetails?select=userDisplayName,userPrincipalName"
     }
   ]
 }
