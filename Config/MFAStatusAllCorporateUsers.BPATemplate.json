@@ -3,39 +3,6 @@
   "style": "Tenant",
   "Fields": [
     {
-      "name": "PasswordNeverExpires",
-      "UseExistingInfo": true,
-      "FrontendFields": [
-        {
-          "name": "Password Never Expires",
-          "value": "PasswordNeverExpires",
-          "formatter": "bool"
-        }
-      ]
-    },
-    {
-      "name": "OAuthAppConsent",
-      "UseExistingInfo": true,
-      "FrontendFields": [
-        {
-          "name": "OAuth App Consent",
-          "value": "OAuthAppConsent",
-          "formatter": "bool"
-        }
-      ]
-    },
-    {
-      "name": "UnifiedAuditLog",
-      "UseExistingInfo": true,
-      "FrontendFields": [
-        {
-          "name": "Unified Audit Log",
-          "value": "UnifiedAuditLog",
-          "formatter": "bool"
-        }
-      ]
-    },
-    {
       "name": "MFANudgeState",
       "UseExistingInfo": true,
       "FrontendFields": [
@@ -65,17 +32,6 @@
           "name": "Secure Defaults State Enabled",
           "value": "SecureDefaultState",
           "formatter": "warnBool"
-        }
-      ]
-    },
-    {
-      "name": "MessageCopyforSentAsDisabled",
-      "UseExistingInfo": true,
-      "FrontendFields": [
-        {
-          "name": "userDisplayName",
-          "value": "userDisplayName",
-          "formatter": "table"
         }
       ]
     },
