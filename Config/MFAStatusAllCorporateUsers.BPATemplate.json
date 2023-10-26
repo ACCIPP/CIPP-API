@@ -13,19 +13,6 @@
         {
           "name": "userPrincipalName",
           "value": "userPrincipalName"
-        },
-        {
-          "name": "userType",
-          "value": "userType"
-        },
-        {
-          "name": "isAdmin",
-          "value": "isAdmin",
-          "formatter": "warnBool"
-        },
-        {
-          "name": "isMfaCapable",
-          "value": "isMfaCapable"
         }
       ],
       "desc": "MFA Status",
@@ -33,11 +20,11 @@
       "API": "Graph",
       "ExtractFields": [
         "UserDisplayName",
-        "userPrincipalName",
-        "userType",
-        "isAdmin",
-        "isMfaCapable"
+        "userPrincipalName"
       ],
+      "parameters": {
+        "asApp": false
+      },
       "URL": "https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails"
     }
   ]
