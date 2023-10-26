@@ -1,6 +1,6 @@
 {
   "name": "MFA Status All Corporate Users",
-  "style": "Table",
+  "style": "Tenant",
   "Fields": [
     {
       "name": "UserDisplayName",
