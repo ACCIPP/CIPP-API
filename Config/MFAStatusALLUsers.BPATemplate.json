@@ -1,22 +1,22 @@
 {
   "name": "MFA Status - ALL Users",
-  "style": "Table",
+  "style": "Tenant",
   "Fields": [
     {
-      "name": "userRegistrationDetails",
+      "name": "Domains",
       "UseExistingInfo": false,
       "FrontendFields": [
         {
-          "name": "userDisplayName",
-          "value": "userDisplayName"
+          "name": "DomainName",
+          "value": "id"
         }
       ],
       "StoreAs": "JSON",
       "API": "Graph",
       "ExtractFields": [
-        "userDisplayName"
+        "id"
       ],
-      "URL": "https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails"
+      "URL": "https://graph.microsoft.com/beta/domains?select=id"
     }
   ]
 }
