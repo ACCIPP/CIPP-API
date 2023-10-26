@@ -1,0 +1,44 @@
+{
+  "name": "MFA Status All Corporate Users",
+  "style": "Table",
+  "Fields": [
+    {
+      "name": "UserDisplayName",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "UserDisplayName",
+          "value": "UserDisplayName"
+        },
+        {
+          "name": "userPrincipalName",
+          "value": "userPrincipalName"
+        },
+        {
+          "name": "userType",
+          "value": "userType"
+        },
+        {
+          "name": "isAdmin",
+          "value": "isAdmin",
+          "formatter": "warnBool"
+        },
+        {
+          "name": "isMfaCapable",
+          "value": "isMfaCapable"
+        }
+      ],
+      "desc": "MFA Status",
+      "StoreAs": "JSON",
+      "API": "Graph",
+      "ExtractFields": [
+        "UserDisplayName",
+        "userPrincipalName",
+        "userType",
+        "isAdmin",
+        "isMfaCapable"
+      ],
+      "URL": "https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails"
+    }
+  ]
+}
