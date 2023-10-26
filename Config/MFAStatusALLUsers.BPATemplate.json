@@ -1,0 +1,22 @@
+{
+  "name": "MFA Status - ALL Users",
+  "style": "Table",
+  "Fields": [
+    {
+      "name": "userRegistrationDetails",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "userDisplayName",
+          "value": "userDisplayName"
+        }
+      ],
+      "StoreAs": "JSON",
+      "API": "Graph",
+      "ExtractFields": [
+        "userDisplayName"
+      ],
+      "URL": "https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails"
+    }
+  ]
+}
