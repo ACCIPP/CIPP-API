@@ -25,7 +25,7 @@
       "parameters": {
         "asApp": false
       },
-      "URL": "https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails"
+      "URL": "https://graph.microsoft.com/v1.0/reports/authenticationMethods/userRegistrationDetails?select=userDisplayName,userPrincipalName,userType,isAdmin,isMfaCapable,isMfaRegistered,isSsprCapable,isSsprEnabled,isSsprRegistered,defaultMfaMethod,methodsRegistered"
     }
   ]
 }
