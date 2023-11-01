@@ -1,0 +1,106 @@
+{
+  "name": "MFA - All Users - All Status",
+  "style": "Table",
+  "Fields": [
+    {
+      "name": "PasswordNeverExpires",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "Password Never Expires",
+          "value": "PasswordNeverExpires",
+          "formatter": "bool"
+        }
+      ],
+      "where": "$_.passwordValidityPeriodInDays -eq 2147483647",
+      "StoreAs": "bool",
+      "API": "Graph",
+      "ExtractFields": [
+        "passwordValidityPeriodInDays"
+      ],
+      "URL": "https://graph.microsoft.com/beta/domains"
+    },
+    {
+      "name": "MFANudgeState",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "MFA Registration Campaign Enabled",
+          "value": "MFANudgeState",
+          "formatter": "bool"
+        }
+      ],
+      "where": "$_.registrationEnforcement.authenticationMethodsRegistrationCampaign.state -eq 'Enabled'",
+      "StoreAs": "bool",
+      "API": "Graph",
+      "ExtractFields": [
+        "registrationEnforcement"
+      ],
+      "URL": "https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy"
+    },
+    {
+      "name": "TAPEnabled",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "Temporary Access Pass Enabled",
+          "value": "TAPEnabled",
+          "formatter": "bool"
+        }
+      ],
+      "StoreAs": "bool",
+      "API": "Graph",
+      "ExtractFields": [
+        "State"
+      ],
+      "URL": "https://graph.microsoft.com/beta/policies/authenticationmethodspolicy/authenticationMethodConfigurations/TemporaryAccessPass"
+    },
+    {
+      "name": "SecureDefaultState",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "Secure Defaults State Enabled",
+          "value": "SecureDefaultState",
+          "formatter": "warnBool"
+        }
+      ],
+      "StoreAs": "bool",
+      "API": "Graph",
+      "ExtractFields": [
+        "IsEnabled"
+      ],
+      "URL": "https://graph.microsoft.com/beta/policies/identitySecurityDefaultsEnforcementPolicy"
+    },
+    {
+      "name": "CurrentSecureScore",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "Current Secure Score",
+          "value": "CurrentSecureScore.currentScore"
+        },
+        {
+          "name": "Max Secure Score",
+          "value": "CurrentSecureScore.maxScore"
+        },
+        {
+          "name": "Average Comparative Score (All Tenants)",
+          "value": "CurrentSecureScore.averageComparativeScores[0].averageScore"
+        },
+        {
+          "name": "Average Comparative Score (Similiar Size Tenants)",
+          "value": "CurrentSecureScore.averageComparativeScores[1].averageScore"
+        }
+      ],
+      "StoreAs": "JSON",
+      "API": "Graph",
+      "ExtractFields": [
+        "currentScore",
+        "maxScore",
+        "averageComparativeScores"
+      ],
+      "URL": "https://graph.microsoft.com/beta/security/secureScores?$top=1"
+    }
+  ]
+}
